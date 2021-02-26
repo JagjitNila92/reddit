@@ -68,3 +68,22 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### Project Wireframe 
+
+This website will have two designs. One for mobile and one for desktops. I have attached two pictures/wireframes of how they should look. 
+I have also attached a page flow. 
+The page flow consists of six components:
+Post,
+New,
+Hot,
+Top,
+Search,
+comments
+
+These first four components will show posts related to their topics. For example, if you click on "New" it will show you a list of new posts on the forum.
+The Post component will be somewhat interactive with the "Comments" button. If you click on the comments section it should have a dropdown of all the comments that have been made on that post. 
+
+The "Search" section will allow you to search any topic on the reddit page. This will be done using the reddit API. 
+
+
