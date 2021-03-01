@@ -1,9 +1,13 @@
 import React from 'react';
 import Header from './Header/Header';
+import Sidebar from './Sidebar/Sidebar';
 
 function App(){
   return(
-    <Header />
+    <div>
+          <Header />
+          <Sidebar />
+    </div>
   );
 }
 
