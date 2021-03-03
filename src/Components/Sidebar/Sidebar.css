@@ -1,7 +1,7 @@
 .sidebar {
     display: block;
     padding: 20px;
-    width: 250px;
+    width: auto;
 }
 
 .side-nav {

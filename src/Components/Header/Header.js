@@ -24,7 +24,7 @@ function Header(props){
     return(
         <div className="header">
             <img src={reddit} alt="reddit-icon"/>
-            <h1>Reddit <span>Micro</span></h1>
+            <h1>Reddit <span className="micro">Micro</span></h1>
             <div className="searchbar">
                 <label>
                     <input type="text" id="search" placeholder="Search..." onChange={handleTextChange} value={searchItem} onKeyPress={handleKeyPress} />
