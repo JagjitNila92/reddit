@@ -27,25 +27,25 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-
+    border-bottom: solid white 1px;
 }
 
 .posts-wrapper .post .post-body{
     grid-area: post-body;
-
 }
 
 .posts-wrapper .post .post-footer{
     grid-area: post-footer;
     display: flex;
     justify-content: center;
+    border-bottom: solid white 50px;
 }
 
 .posts-wrapper .post .post-title > .subreddit-image {
     min-width: 16px;
     min-height: 16px;
-    max-width: 16px;
-    max-height: 16px;
+    max-width: 20px;
+    max-height: 20px;
     margin: 0px 5px;
     border-radius: 50%;
 }
