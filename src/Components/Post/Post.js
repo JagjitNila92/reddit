@@ -9,14 +9,11 @@ const getPopular = async () => {
   const data = await response.json();
   console.log(data);
   }
-
   const posts = getPopular();
 
-
-function Post() {
+  function Post() {
     return (
         <div className="posts-wrapper">
-            {posts.map((posts, index) => (
                 <div className="post">
                     <div className="post-title">
                         {/*<img className="subreddit-image" src={posts.subreddit.image_src} />*/}
@@ -42,9 +39,8 @@ function Post() {
                         </div>
                     </div>    
                 </div>
-            ))}
         </div>
-    );
-  }
+    )};
+  
 
 export default Post;
