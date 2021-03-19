@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import Header from './Components/Header/Header';
 import Sidebar from './Components/Sidebar/Sidebar';
 import Post from './Components/Post/Post';
+import redditCall from './app/Reddit';
 
 function App() {
+  useEffect() => {
+    trackPromise(
+      redditCall.fetchHomePosts().then(results => {
+        dispatch()
+      })
+    )
+  }
+
     return(
       <div>
             <Header />

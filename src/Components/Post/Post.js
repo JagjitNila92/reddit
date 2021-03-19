@@ -4,7 +4,7 @@ import './Post.css';
 import { FaHeart } from "react-icons/fa";
 import { FaComment } from "react-icons/fa";
 
-function Post(props) {
+function Post() {
     const [data, setData] = useState([]);
 
     useEffect(() => {
