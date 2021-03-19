@@ -5,14 +5,9 @@ import Sidebar from './Components/Sidebar/Sidebar';
 import Post from './Components/Post/Post';
 import redditCall from './app/Reddit';
 
+
+
 function App() {
-  useEffect() => {
-    trackPromise(
-      redditCall.fetchHomePosts().then(results => {
-        dispatch()
-      })
-    )
-  }
 
     return(
       <div>
