@@ -3,7 +3,7 @@ export const API = 'https://www.reddit.com';
 const redditCall = {
     fetchHomePosts() {
         //fetching the home post API 
-        return fetch(`${API}/.json`)
+        return fetch(`${API}/r/popular.json`)
             .then(response => {
                 if (response.ok) {
                     return response.json();
@@ -57,7 +57,6 @@ const redditCall = {
                 return jsonResponse.data.children;
             })
     },
-
 }
 
 export default redditCall; 

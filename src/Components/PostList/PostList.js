@@ -1,8 +1,8 @@
 import React from 'react';
-import Post from './Post/Post';
+import Post from '../Post/Post';
 
 
-function RedditPostList(props) {
+function redditPostList(props) {
 
     return (
         <div className="redditpostlist">
@@ -15,4 +15,4 @@ function RedditPostList(props) {
     )
 }
 
-export default RedditPostList;
+export default redditPostList;
