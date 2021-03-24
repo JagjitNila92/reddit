@@ -1,7 +1,7 @@
 export const API = 'https://www.reddit.com';
 
 const redditCall = {
-    fetchHomePosts() {
+    fetchHomePost() {
         //fetching the home post API 
         return fetch(`${API}/r/popular.json`)
             .then(response => {
@@ -16,7 +16,7 @@ const redditCall = {
             })
     },
 
-    fetchNewPosts() {
+    fetchNewPost() {
         return fetch(`${API}/new/.json`)
             .then(response => {
                 if (response.ok) {
@@ -30,7 +30,7 @@ const redditCall = {
             })
     },
 
-    fetchHotPosts() {
+    fetchHotPost() {
         return fetch(`${API}/hot/.json`)
             .then(response => {
                 if (response.ok) {
@@ -44,7 +44,7 @@ const redditCall = {
             })
     },
 
-    fetchTopPosts() {
+    fetchTopPost() {
         return fetch(`${API}/top/.json`)
             .then(response => {
                 if (response.ok) {

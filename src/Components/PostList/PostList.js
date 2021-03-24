@@ -7,7 +7,7 @@ function redditPostList(props) {
     return (
         <div className="redditpostlist">
             {
-                props.posts.map(data => (
+                props.posts && props.posts.map(data => (
                 <Post post={data} key={data.data.id} />
                 ))
             }

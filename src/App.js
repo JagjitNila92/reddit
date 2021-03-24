@@ -1,11 +1,14 @@
 import React, { useEffect } from 'react';
 import './App.css';
+import { BrowserRouter, Route } from 'react-router-dom';
 
 import Header from './Components/Header/Header';
 import Sidebar from './Components/Sidebar/Sidebar';
 
 import redditCall from './app/Reddit';
+import redditPostList from '../src/Components/PostList/PostList';
 import { getHomePostHot, getHomePostNew, getHomePostTop, getHomePost } from './app/RedditSlice';
+
 
 import { useDispatch, useSelector } from 'react-redux';
 import { trackPromise } from 'react-promise-tracker';
@@ -20,20 +23,20 @@ function App() {
         dispatch(getHomePost(results))
       }));
       trackPromise(
-        redditCall.fetchHomePostNew().then(results => {
+        redditCall.fetchNewPost().then(results => {
           dispatch(getHomePostNew(results))
         }));
       trackPromise(
-        redditCall.fetchHomePostHot().then(results => {
+        redditCall.fetchHotPost().then(results => {
           dispatch(getHomePostHot(results))
         }));
       trackPromise(
-        redditCall.fetchHomePostTop().then(results => {
+        redditCall.fetchTopPost().then(results => {
           dispatch(getHomePostTop(results))
         }));
       }, [dispatch]);
 
-  const homePost = useSelector(state => state.redditPostList.home);
+  const homePost = useSelector(state => state.redditPostList);
   const homePostNew = useSelector(state => state.redditPostList.new);
   const homePostHot = useSelector(state => state.redditPostList.hot);
   const homePostTop = useSelector(state => state.redditPostList.top);
@@ -42,14 +45,24 @@ function App() {
 
     return(
       <div>
+        <BrowserRouter>
             <Header />
             <div className="bar-wrapper">
                 <Sidebar />
-                <redditPostList post={homePost} />
-                <redditPostList post={homePostNew} />
-                <redditPostList post={homePostHot} />
-                <redditPostList post={homePostTop} />
+                <Route exact path={"/"}>
+                  <redditPostList post={homePost} />
+                </Route>
+                <Route exact path={"/new"}>
+                  <redditPostList post={homePostNew} />
+                </Route>
+                <Route exact path={"/hot"}>
+                  <redditPostList post={homePostHot} />
+                </Route>
+                <Route exact path={"/top"}>
+                  <redditPostList post={homePostTop} />
+                </Route>
             </div>
+        </BrowserRouter>
       </div>
     );
   }
