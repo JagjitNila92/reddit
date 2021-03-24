@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import './App.css';
-import { BrowserRouter, Route } from 'react-router-dom';
 
 import Header from './Components/Header/Header';
 import Sidebar from './Components/Sidebar/Sidebar';
@@ -36,33 +35,22 @@ function App() {
         }));
       }, [dispatch]);
 
-  const homePost = useSelector(state => state.redditPostList);
+  const homePost = useSelector(state => state.redditPostList.home);
   const homePostNew = useSelector(state => state.redditPostList.new);
   const homePostHot = useSelector(state => state.redditPostList.hot);
   const homePostTop = useSelector(state => state.redditPostList.top);
 
-  
 
     return(
       <div>
-        <BrowserRouter>
-            <Header />
+          <Header />
             <div className="bar-wrapper">
                 <Sidebar />
-                <Route exact path={"/"}>
                   <redditPostList post={homePost} />
-                </Route>
-                <Route exact path={"/new"}>
                   <redditPostList post={homePostNew} />
-                </Route>
-                <Route exact path={"/hot"}>
                   <redditPostList post={homePostHot} />
-                </Route>
-                <Route exact path={"/top"}>
                   <redditPostList post={homePostTop} />
-                </Route>
             </div>
-        </BrowserRouter>
       </div>
     );
   }
